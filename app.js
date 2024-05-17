@@ -44,8 +44,8 @@ app.post('/user', (req, res) => {
   }
 });
 
-app.patch('/user/:id', (req, res) => {
-  const user = listUsers.find((user) => user.username.toString() === req.params.id.toString());
+app.patch('/user/:username', (req, res) => {
+  const user = listUsers.find((user) => user.username.toString() === req.params.username.toString());
   if (!user) {
     res.status(404).send('User not found');
   } else {
@@ -59,8 +59,8 @@ app.patch('/user/:id', (req, res) => {
   }
 });
 
-app.delete('/user/:id', (req, res) => {
-  const user = listUsers.find((user) => user.username.toString() === req.params.id.toString());
+app.delete('/user/:username', (req, res) => {
+  const user = listUsers.find((user) => user.username.toString() === req.params.username.toString());
   if (!user) {
     res.status(404).send('User not found');
   } else {
