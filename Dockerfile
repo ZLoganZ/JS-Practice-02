@@ -1,5 +1,7 @@
 FROM node:lts-alpine
 
+ENV PORT=${PORT}
+
 WORKDIR /app
 
 COPY package.json .

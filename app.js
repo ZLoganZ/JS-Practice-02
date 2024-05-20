@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
 
@@ -71,7 +72,7 @@ app.delete('/user/:username', (req, res) => {
   }
 });
 
-const PORT = 3456;
+const PORT = process.env.PORT || 3456;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
